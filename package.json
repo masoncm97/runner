@@ -6,6 +6,9 @@
   "author": "Gene Kogan <kogan.gene@gmail.com>",
   "license": "MIT",
   "type": "module",
+  "scripts": {
+    "start": "node -r dotenv/config src/index.js"
+  },
   "dependencies": {
     "axios": "^0.27.2",
     "cors": "^2.8.5",

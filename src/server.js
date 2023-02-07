@@ -13,9 +13,9 @@ const createServer = async () => {
   })
 
   dotenv.config()
-  console.log(process.env.REACT_APP_OPENAI_API_KEY)
+  // console.log(process.env.REACT_APP_OPENAI_API_KEY)
   
-  console.log(chatRoutes)
+  // console.log(chatRoutes)
   
   server.register(chatRoutes)
 
