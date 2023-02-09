@@ -1,6 +1,7 @@
+import { FastifyInstance } from 'fastify';
 import { Configuration, OpenAIApi } from 'openai'
 
-export async function registerOpenAi (server) {
+export async function registerOpenAi (server: FastifyInstance) {
 
     console.log(process.env.REACT_APP_OPENAI_API_KEY)
     
@@ -10,6 +11,16 @@ export async function registerOpenAi (server) {
 
     const openai = new OpenAIApi(configuration);
 
+    
     server.decorate('openai', openai);
-    server.log.info('Successfully registered openai plugin');
+
+    if(!server.openai) {
+        server.log.info('Unable to registerer openai plugin');
+    }
 }
+
+declare module "fastify" {
+    interface FastifyInstance {
+      openai?: OpenAIApi;
+    }
+  }

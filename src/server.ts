@@ -1,6 +1,6 @@
 import Fastify from 'fastify'
-import { chatRoutes } from './routes/chat-routes.js'
-import { registerOpenAi } from './plugins/openai-plugin.js'
+import { chatRoutes } from './routes/chat-routes'
+import { registerOpenAi } from './plugins/openai-plugin'
 import * as dotenv from 'dotenv'
 
 /**
