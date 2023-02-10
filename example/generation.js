@@ -3,7 +3,8 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import axios from 'axios';
 import { EdenClient } from "eden-sdk";
-import {generatePrompt} from './config_generators.js';
+import { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
+import { generatePrompt} from './config/config_generators';
 
 dotenv.config()
 

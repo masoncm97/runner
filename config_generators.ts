@@ -6,7 +6,7 @@ dotenv.config()
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 
-function getRandomSample(arr, sampleSize) {
+function getRandomSample(arr: string[], sampleSize: number) {
   return arr
     .sort(() => 0.5 - Math.random())
     .slice(0, sampleSize);
@@ -64,7 +64,7 @@ export async function generatePrompt() {
   return prompt;
 }
 
-export async function generatePrompts(n) {
+export async function generatePrompts(n: number) {
   let prompts = [];
   for (var i=0; i<n; i++) {
     const prompt = generatePrompt();
