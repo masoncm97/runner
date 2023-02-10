@@ -1,6 +1,8 @@
 import Fastify from 'fastify'
 import { chatRoutes } from './routes/chat-routes'
+import { createRoutes } from './routes/create-routes'
 import { registerOpenAi } from './plugins/openai-plugin'
+import { registerEden } from './plugins/eden-plugin'
 import * as dotenv from 'dotenv'
 
 /**
@@ -13,13 +15,13 @@ const createServer = async () => {
   })
 
   dotenv.config()
-  // console.log(process.env.REACT_APP_OPENAI_API_KEY)
-  
-  // console.log(chatRoutes)
   
   server.register(chatRoutes)
+  server.register(createRoutes)
 
   registerOpenAi(server)
+  registerEden(server)
+
   
   return server
 }

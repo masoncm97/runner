@@ -13,10 +13,6 @@ export async function registerOpenAi (server: FastifyInstance) {
 
     
     server.decorate('openai', openai);
-
-    if(!server.openai) {
-        server.log.info('Unable to registerer openai plugin');
-    }
 }
 
 declare module "fastify" {

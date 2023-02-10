@@ -55,6 +55,6 @@ async function handleChat(server: FastifyInstance, req: FastifyRequest, reply: F
     return { response: abrahamResp }
 
   } catch (err) {
-    server.log.error('Plugin: Replicate, error on register', err);
+    server.log.error('Plugin: OpenAi, error on register', err);
   }
 }
